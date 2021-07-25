@@ -1,0 +1,23 @@
+InterestArea = (48501)
+contaminant = ("Lead")
+ExposureRoute = ("drinking water")
+
+print("Environmental Health Exposure Tracking")
+employeeID = int(input("please enter ID: "))
+if employeeID < 0:
+    print("please enter ID: ")
+else:
+    MRN = input("please enter patient MRN: ")
+patientDOB = input("please enter patient DOB (mmddyyyy): ")
+
+ResidentialHistory = int(input("please confirm residential history dating back 10 yrs (enter zip code): "))
+if ResidentialHistory == InterestArea:
+    print("Patient may be at risk of environmental exposure above EPA limits for " + contaminant + " in " + ExposureRoute)
+    NewSource = input("Did patient live in another zip code during the past 10 yrs?: ")
+    if NewSource == ("yes"):
+       zip2 = input("please enter additional zip code: ")
+    else:
+     print("Patient may be at risk of environmental exposure above EPA limits for " + contaminant + " in " + ExposureRoute +
+           ". Conduct Exposure Assessment.")
+else:
+    print("No Exposure Assessment advised.")
